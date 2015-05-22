@@ -1,21 +1,99 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>囲碁サンプル</title>
+    <title>WH40K</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="/javascripts/jquery-1.8.0.js"></script>
 	<script src="/javascripts/client.js"></script>
   </head>
   <body>
-    <h3>囲碁盤サンプル</h2>
-    <canvas id="igoban" width="600" height="480"></canvas>
-    <div id="player_id"></div>
+    <h3>WH40KC</h2>
+    <div><input type="text" id="name" value="test"/><button id="send_name">send_name</button></div>
     <div id="player_order"></div>
-    <div id="pos"></div>
+
+    <hr/>
+
+    <div id="game_area">
+      <table>
+        <tr> <td colspan="7" align="center"><div id="hq1"><img src="http://localhost/kani/images/tn_WHK01_1.jpg" width="57"/><br/>Captain Cato Sicarius</div></td></tr>
+      </table>
+      <p/>
+      <table>
+        <tr> 
+          <td><div  id="pc1_1"></div></td>          
+          <td><div  id="pc1_2"></div></td>
+          <td><div  id="pc1_3"></div></td>
+          <td><div  id="pc1_4"></div></td>
+          <td><div  id="pc1_5"></div></td>
+          <td><div  id="pc1_6"></div></td>
+          <td><div  id="pc1_7"></div></td>
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <tr>
+          <td><div id="p1f"  align="center">P</div></td>
+          <td><div id="p2f"  align="center"></div></td>
+          <td><div id="p3f"  align="center"></div></td>
+          <td><div id="p4f"  align="center"></div></td>
+          <td><div id="p5f"  align="center"></div></td>
+          <td><div id="p6f"  align="center"></div></td>
+          <td><div id="p7f"  align="center"></div></td>
+        </tr>
+        <tr> 
+          <td><div  id="p1" align="center"><img src="http://localhost/kani/images/tn_WHK01_175.jpg" width="80"/><br/>1 Plunnum</div></td>
+          <td><div  id="p2" align="center"><img src="http://localhost/kani/images/tn_WHK01_176.jpg" width="80"/><br/>2 Atrox Prime</div></td>
+          <td><div  id="p3" align="center"><img src="http://localhost/kani/images/tn_WHK01_177.jpg" width="80"/><br/>3 Barlus</div></td>
+          <td><div  id="p4" align="center"><img src="http://localhost/kani/images/tn_WHK01_178.jpg" width="80"/><br/>4 Elouith</div></td>
+          <td><div  id="p5" align="center"><img src="http://localhost/kani/images/tn_WHK01_179.jpg" width="80"/><br/>5 Carnath</div></td>
+          <td><div  id="p6" align="center"><img src="http://localhost/kani/images/tn_WHK01_180.jpg" width="80"/><br/>6 Tarrus</div></td>
+          <td><div  id="p7" align="center"><img src="http://localhost/kani/images/tn_WHK01_181.jpg" width="80"/><br/>7 Osus IV</div></td>                                                  
+        </tr>
+      </table>
+      <p/>
+      <table>
+        <tr>
+          <td id="p1c"></hd>
+          <td id="p2c"></hd>
+          <td id="p3c"></hd>
+          <td id="p4c"></hd>
+          <td id="p5c"></hd>
+          <td id="p6c"></hd>
+          <td id="p7c"></hd>
+        </tr>
+      </table>
+      <p/>
+      <table>        
+        <tr> <td colspan="7" align="center"><img src="http://localhost/kani/images/tn_WHK01_3.jpg" width="57" id="hq2i"/><br/><div id="hq2">Nazdreg</div></td></tr>
+
+      </table>
+
+    </div>
+
+    <hr/>
+
+    <div id="hands">
+      <table>
+
+        <tr> 
+          <td><div  id="h1" align="center"><img src="http://localhost/kani/images/tn_WHK01_10.jpg" width="57"/></div></td>          
+          <td><div  id="h2" align="center"><img src="http://localhost/kani/images/tn_WHK01_11.jpg" width="57"/></div></td>
+          <td><div  id="h3" align="center"><img src="http://localhost/kani/images/tn_WHK01_12.jpg" width="57"/></div></td>
+          <td><div  id="h4" align="center"><img src="http://localhost/kani/images/tn_WHK01_13.jpg" width="57"/></div></td>
+          <td><div  id="h5" align="center"><img src="http://localhost/kani/images/tn_WHK01_14.jpg" width="57"/></div></td>
+          <td><div  id="h6" align="center"><img src="http://localhost/kani/images/tn_WHK01_15.jpg" width="57"/></div></td>
+          <td><div  id="h7" align="center"><img src="http://localhost/kani/images/tn_WHK01_16.jpg" width="57"/></div></td>
+        </tr>
+      </table>
+    </div>
+    <hr/>
+    <div id="player_id"></div>
     <div><input type="text" id="input" /><button id="send">send</button></div>
     <div id="list"></div>
     <div id="kihu"></div>
+    <canvas id="igoban" width="100" height="100"></canvas>
+
     <p/>
   </body>
 </html>
